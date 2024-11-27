@@ -36,12 +36,12 @@ const ProductDetails = ({ cart, setCart }) => {
   }, []);
 
   const toggleSize = (sizeLabel) => {
-    setSelectedSize((prev) => (prev === sizeLabel ? "" : sizeLabel)); // Toggle size selection
+    setSelectedSize((prev) => (prev === sizeLabel ? "" : sizeLabel)); 
     setToggleState((prev) => ({
       ...prev,
-      [sizeLabel]: !prev[sizeLabel], // Toggle the state for the specific size button
+      [sizeLabel]: !prev[sizeLabel], 
     }));
-    setError(""); // Clear any error when a size is clicked
+    setError(""); 
   };
 
   const addToCart = () => {

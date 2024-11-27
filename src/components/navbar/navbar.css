@@ -2,14 +2,14 @@
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #d3d3d3; /* Light gray */
+  background-color: #d3d3d3; 
   color: black;
-  padding: 1rem 2rem; /* Adjust spacing */
+  padding: 1rem 2rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  border-bottom: 2px solid #ccc; /* Subtle border for separation */
+  border-bottom: 2px solid #ccc; 
 }
 
 .navbar-title {
@@ -36,12 +36,12 @@
 /* Mini-Cart Styles */
 .mini-cart {
   position: absolute;
-  top: 3.5rem; /* Below the navbar */
+  top: 3.5rem; 
   right: 1rem;
   background: white;
   color: black;
   border: 2px solid black;
-  border-radius: 15px 15px 0 0; /* Blocky sock shape */
+  border-radius: 15px 15px 0 0; 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   z-index: 1000;
@@ -66,7 +66,7 @@
   object-fit: cover;
   margin-right: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners for images */
+  border-radius: 8px; 
 }
 
 .mini-cart li p {
