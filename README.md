@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Moustache Republic Test Guide
+
+The test is all about adding in tshirts and items in the cart. My design doesn't fully align with the invisionapp one but I have made a bit of modification of the design to make them look better and neater and not too bland. I have however met with the essential design detail and also the functionality of the program. I have included three more tests in the components and modified my app.test.js file so you can run npm test on them.

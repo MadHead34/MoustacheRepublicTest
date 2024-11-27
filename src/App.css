@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+/* Navbar Styles */
+.navbar {
+  background-color: #d3d3d3; /* Gray background */
+  color: black;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cart-button {
+  background-color: white;
+  color: grey;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cart-button:hover {
+  color: black;
+  background-color: white;
+}
+
+/* MiniCart Container */
+.mini-cart-container {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.mini-cart-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mini-cart-wrapper li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mini-cart-wrapper img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+/* Responsive Design for MiniCart */
+@media (max-width: 768px) {
+  .mini-cart-container {
+    top: 4rem; /* Adjust for small screen */
+    right: 1rem;
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit maximum width */
+    padding: 0.5rem;
+  }
+
+  /* Make cart items more compact */
+  .mini-cart-wrapper li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mini-cart-wrapper img {
+    margin-bottom: 0.5rem; /* Image spacing */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 480px) {
+  /* MiniCart full-width and better padding for very small screens */
+  .mini-cart-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .mini-cart-wrapper li {
+    font-size: 0.9rem; /* Smaller text */
+  }
+}
+
+.product-details {
+  display: flex; /* Create a flex container */
+  flex-direction: row; /* Items in a row (left and right columns) */
+  gap: 2rem; /* Space between the columns */
+  padding: 2rem; /* Add padding around the container */
+}
+
+.product-details-image {
+  flex: 1; /* Take 1 part of the available space */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.product-details-image img {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image fits well */
+}
+
+.product-details-content {
+  flex: 2; /* Take 2 parts of the available space */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items to the top */
+  align-items: flex-start; /* Align content to the left */
+}
+
+.product-details-content h1,
+.product-details-content p,
+.product-details-content button {
+  margin-bottom: 1rem; /* Add spacing between elements */
+}
+.product-details-content button {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-details-content button:hover {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.product-details-content .sizes {
+  display: flex;
+  gap: 1rem; /* Space between size buttons */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column; /* Stack columns vertically on small screens */
+    align-items: center; /* Center align the content */
   }
-  to {
-    transform: rotate(360deg);
+
+  .product-details-image,
+  .product-details-content {
+    width: 100%; /* Full width for both columns */
+    text-align: center; /* Center align the text */
   }
+}
+
+.size-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.size-label .required {
+  color: red;
+  margin-left: 0.2rem;
+}
+
+/* Size Buttons */
+.sizes button {
+  width: 50px; /* Square buttons */
+  height: 50px; /* Square buttons */
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: grey;
+}
+
+.sizes button:hover {
+  border-color: black;
+  background-color: #f9f9f9; /* Subtle hover effect */
+}
+
+.sizes .selected {
+  border: 2px solid black;
+  font-weight: bold;
+  color: black;
+}
+
+.size-label .selected-size {
+  font-weight: bold;
+  color: black;
+  margin-left: 0.5rem;
+  text-transform: uppercase; /* Optional: To match size button case */
 }
